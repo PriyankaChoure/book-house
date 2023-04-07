@@ -36,7 +36,7 @@ async function addBook(book) {
     let pool = await sql.connect(config);
     let createdBook = await pool.request().query(reqUrl);
     console.log("in service book - ", createdBook);
-    return createdBook.recordset;
+    return book.Book_Id;
   } catch (error) {
     console.log(error);
   }
